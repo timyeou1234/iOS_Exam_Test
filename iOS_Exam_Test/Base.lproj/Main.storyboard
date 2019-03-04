@@ -1,24 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eqf-S2-8uV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--搜尋輸入頁-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="iOS_Exam_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="qwu-9r-C1h">
+                                <rect key="frame" x="20" y="266.5" width="335" height="134"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="欲搜尋內容" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7W-sw-Q8f">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="每頁呈現數量" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMO-TC-CWD">
+                                        <rect key="frame" x="0.0" y="51" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCm-22-RjM">
+                                        <rect key="frame" x="0.0" y="102" width="335" height="32"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="MBd-PO-fcG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="搜尋"/>
+                                        <connections>
+                                            <segue destination="v2f-KQ-EWo" kind="show" identifier="searchSegue" id="mAS-D0-Xe0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bCm-22-RjM" firstAttribute="leading" secondItem="N7W-sw-Q8f" secondAttribute="leading" id="4h2-cJ-qX8"/>
+                                    <constraint firstAttribute="trailing" secondItem="N7W-sw-Q8f" secondAttribute="trailing" id="5Jg-Va-Ll4"/>
+                                    <constraint firstItem="bCm-22-RjM" firstAttribute="trailing" secondItem="N7W-sw-Q8f" secondAttribute="trailing" id="cC3-8e-OBZ"/>
+                                    <constraint firstItem="N7W-sw-Q8f" firstAttribute="leading" secondItem="qwu-9r-C1h" secondAttribute="leading" id="e5Q-vb-KSe"/>
+                                    <constraint firstItem="eMO-TC-CWD" firstAttribute="leading" secondItem="N7W-sw-Q8f" secondAttribute="leading" id="oTG-yP-dLC"/>
+                                    <constraint firstItem="eMO-TC-CWD" firstAttribute="trailing" secondItem="N7W-sw-Q8f" secondAttribute="trailing" id="ytf-oa-pP7"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qwu-9r-C1h" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1DY-q9-uga"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qwu-9r-C1h" secondAttribute="trailing" constant="20" id="Z1a-Lc-IzA"/>
+                            <constraint firstItem="qwu-9r-C1h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZxJ-LW-3nd"/>
+                            <constraint firstItem="qwu-9r-C1h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fxP-v9-OPa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="搜尋輸入頁" id="5E5-Du-zcn"/>
+                    <connections>
+                        <outlet property="numberPerPageTextField" destination="eMO-TC-CWD" id="TRp-1i-FhI"/>
+                        <outlet property="searchButton" destination="bCm-22-RjM" id="Or8-iC-bvG"/>
+                        <outlet property="searchContextTextField" destination="N7W-sw-Q8f" id="55h-DU-FoH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2015.2" y="132.68365817091455"/>
+        </scene>
+        <!--Search List View Controller-->
+        <scene sceneID="ymb-Pa-Ppf">
+            <objects>
+                <viewController id="v2f-KQ-EWo" customClass="SearchListViewController" customModule="iOS_Exam_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vnx-lL-GQb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gux-E5-1J4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ka6-vg-Uda">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1lZ-Sl-rGF">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lLN-Hd-t19" firstAttribute="bottom" secondItem="Gux-E5-1J4" secondAttribute="bottom" id="33r-gY-Z7V"/>
+                            <constraint firstItem="lLN-Hd-t19" firstAttribute="trailing" secondItem="Gux-E5-1J4" secondAttribute="trailing" id="FKE-Tf-3Lb"/>
+                            <constraint firstItem="Gux-E5-1J4" firstAttribute="top" secondItem="lLN-Hd-t19" secondAttribute="top" id="k9u-Z2-P17"/>
+                            <constraint firstItem="Gux-E5-1J4" firstAttribute="leading" secondItem="lLN-Hd-t19" secondAttribute="leading" id="ze4-6e-M02"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lLN-Hd-t19"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Gux-E5-1J4" id="ml1-P1-kLU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4S-Fe-zj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2778" y="133"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nFJ-MH-Vn7">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Eqf-S2-8uV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uDh-S9-35F">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="V8C-2L-mKs" kind="relationship" relationship="viewControllers" id="GVq-hc-vOU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ad-AU-cPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--搜尋-->
+        <scene sceneID="ADZ-uU-bl4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V8C-2L-mKs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="搜尋" image="icons8-search" id="bUt-SD-9e0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eGG-AI-eea">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AXw-a1-zEW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ijn-bu-XCl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-search" width="50" height="50"/>
+    </resources>
 </document>
