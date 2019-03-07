@@ -31,24 +31,36 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saa-b0-hJc">
+                        <rect key="frame" x="219" y="20" width="25" height="25"/>
+                        <state key="normal" image="icons8-star"/>
+                        <state key="selected" image="icons8-christmas_star_2"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="PQW-su-ooR" secondAttribute="trailing" constant="12" id="5Uo-SD-5zB"/>
                 <constraint firstAttribute="bottom" secondItem="PQW-su-ooR" secondAttribute="bottom" constant="20" id="5e2-Hd-2Xo"/>
+                <constraint firstAttribute="trailing" secondItem="saa-b0-hJc" secondAttribute="trailing" constant="20" id="90U-nW-9Mm"/>
                 <constraint firstItem="zjE-5p-Jeq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DEK-XW-iIV"/>
                 <constraint firstAttribute="trailing" secondItem="zjE-5p-Jeq" secondAttribute="trailing" constant="12" id="Jr0-iS-Sm6"/>
                 <constraint firstItem="PQW-su-ooR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="j9e-ko-M36"/>
                 <constraint firstItem="zjE-5p-Jeq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="pe1-LG-kJE"/>
                 <constraint firstItem="PQW-su-ooR" firstAttribute="top" secondItem="zjE-5p-Jeq" secondAttribute="bottom" constant="8" id="q16-ko-AES"/>
+                <constraint firstItem="saa-b0-hJc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="z6y-Dt-Q8p"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="264" height="206"/>
             <connections>
+                <outlet property="favoriteButton" destination="saa-b0-hJc" id="Lyk-nd-GqK"/>
                 <outlet property="photoImageView" destination="zjE-5p-Jeq" id="yah-0I-xyv"/>
                 <outlet property="titleLabel" destination="PQW-su-ooR" id="Yjd-aM-Fi7"/>
             </connections>
             <point key="canvasLocation" x="184" y="224.88755622188907"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="icons8-christmas_star_2" width="25" height="25"/>
+        <image name="icons8-star" width="25" height="25"/>
+    </resources>
 </document>

@@ -22,6 +22,8 @@
 		6BB043E3222A8FD5006D55B7 /* SearchedItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB043E0222A8FD5006D55B7 /* SearchedItemCollectionViewCell.swift */; };
 		6BB043E4222A8FD5006D55B7 /* SearchedItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB043E1222A8FD5006D55B7 /* SearchedItemCollectionViewCell.xib */; };
 		6BB043E5222A8FD5006D55B7 /* SearchedItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB043E1222A8FD5006D55B7 /* SearchedItemCollectionViewCell.xib */; };
+		6BEF77E2222D0B8F00CD0789 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF77E1222D0B8F00CD0789 /* FavoriteViewController.swift */; };
+		6BEF77E3222D0B8F00CD0789 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF77E1222D0B8F00CD0789 /* FavoriteViewController.swift */; };
 		6BF32E872229045000FD9C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF32E862229045000FD9C23 /* AppDelegate.swift */; };
 		6BF32E892229045000FD9C23 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF32E882229045000FD9C23 /* SearchViewController.swift */; };
 		6BF32E8C2229045000FD9C23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF32E8A2229045000FD9C23 /* Main.storyboard */; };
@@ -51,6 +53,7 @@
 		6BB043DD222A5F25006D55B7 /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
 		6BB043E0222A8FD5006D55B7 /* SearchedItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		6BB043E1222A8FD5006D55B7 /* SearchedItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchedItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		6BEF77E1222D0B8F00CD0789 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		6BF32E832229045000FD9C23 /* iOS_Exam_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Exam_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF32E862229045000FD9C23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BF32E882229045000FD9C23 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -98,10 +101,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6BA51C2022310B3300CDAD6C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6BB043DD222A5F25006D55B7 /* SearchListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6BB043CD22291000006D55B7 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				6BA51C2022310B3300CDAD6C /* ViewModel */,
 				6BB043CE22291015006D55B7 /* Search */,
+				6BEF77E4222D0B9700CD0789 /* Favorite */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -111,7 +124,6 @@
 			children = (
 				6BF32E882229045000FD9C23 /* SearchViewController.swift */,
 				6BB043D222292145006D55B7 /* SearchListViewController.swift */,
-				6BB043DD222A5F25006D55B7 /* SearchListViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -139,6 +151,14 @@
 				6BB043E1222A8FD5006D55B7 /* SearchedItemCollectionViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6BEF77E4222D0B9700CD0789 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				6BEF77E1222D0B8F00CD0789 /* FavoriteViewController.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		6BF32E7A2229044F00FD9C23 = {
@@ -169,8 +189,8 @@
 				6BB043D8222A2923006D55B7 /* Service */,
 				6BB043CD22291000006D55B7 /* Module */,
 				6BB043DC222A29DD006D55B7 /* Model */,
-				6BF32E8A2229045000FD9C23 /* Main.storyboard */,
 				6BB043E6222A8FDC006D55B7 /* View */,
+				6BF32E8A2229045000FD9C23 /* Main.storyboard */,
 				6BF32E902229045400FD9C23 /* Assets.xcassets */,
 				6BF32E922229045400FD9C23 /* LaunchScreen.storyboard */,
 				6BF32E952229045400FD9C23 /* Info.plist */,
@@ -380,6 +400,7 @@
 				6BF32E8F2229045000FD9C23 /* iOS_Exam_Test.xcdatamodeld in Sources */,
 				6BB043DE222A5F25006D55B7 /* SearchListViewModel.swift in Sources */,
 				6BB043D322292145006D55B7 /* SearchListViewController.swift in Sources */,
+				6BEF77E2222D0B8F00CD0789 /* FavoriteViewController.swift in Sources */,
 				6BB043D6222A2914006D55B7 /* SearchService.swift in Sources */,
 				6BB043E2222A8FD5006D55B7 /* SearchedItemCollectionViewCell.swift in Sources */,
 				6BF32E872229045000FD9C23 /* AppDelegate.swift in Sources */,
@@ -398,6 +419,7 @@
 				6BB043DF222A5F25006D55B7 /* SearchListViewModel.swift in Sources */,
 				6BB043D7222A2914006D55B7 /* SearchService.swift in Sources */,
 				6BF32E9F2229045500FD9C23 /* iOS_Exam_TestTests.swift in Sources */,
+				6BEF77E3222D0B8F00CD0789 /* FavoriteViewController.swift in Sources */,
 				6BB043D1222914AC006D55B7 /* UIExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

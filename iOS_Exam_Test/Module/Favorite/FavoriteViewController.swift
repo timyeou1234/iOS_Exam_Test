@@ -1,38 +1,31 @@
 //
-//  SearchOutcomeViewController.swift
+//  FavoriteViewController.swift
 //  iOS_Exam_Test
 //
-//  Created by YeouTimothy on 2019/3/1.
+//  Created by YeouTimothy on 2019/3/4.
 //  Copyright © 2019 Timothy. All rights reserved.
 //
 
 import UIKit
-import SDWebImage
 
-class SearchListViewController: UIViewController {
-    
+class FavoriteViewController: UIViewController {
+
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    var keyword         :String?
-    var numberPerPage   :Int?
     
     lazy var viewModel  : SearchListViewModel = {
         return SearchListViewModel()
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let keyword = keyword,
-              let numberPerPage = numberPerPage
-        else {
-            print("傳值錯誤")
-            return
-        }
-        self.title = "搜尋結果 \(keyword)"
         
-        initViewModel(keyword, numberPerPage: numberPerPage)
         self.setCollectionView()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.refreshViewModel()
     }
     
     func setCollectionView(){
@@ -41,17 +34,8 @@ class SearchListViewController: UIViewController {
         collectionView.register(UINib(nibName: "SearchedItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SearchedItemCollectionViewCell")
     }
     
-    func initViewModel(_ keyword:String, numberPerPage:Int){
-        ///進行資料提取，不做資料初始化
-        viewModel.initFetch(keyword, numberPerPage: numberPerPage)
-        
-        viewModel.reloadTableViewClosure = {
-            [weak self] () in
-            DispatchQueue.main.async {
-                self?.collectionView.reloadData()
-            }
-        }
-        
+    func refreshViewModel(){
+        viewModel.getFavoriteList(false)
     }
     
 
@@ -67,7 +51,7 @@ class SearchListViewController: UIViewController {
 
 }
 
-extension SearchListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width / 2
@@ -86,12 +70,9 @@ extension SearchListViewController: UICollectionViewDelegate, UICollectionViewDe
         let cellModel = viewModel.getCellViewModel(at: indexPath)
         cell.titleLabel.text = cellModel.titel
         cell.photoImageView.sd_setImage(with: cellModel.imageUrl, completed: nil)
-        cell.favoriteButton.isSelected = cellModel.isLike
+        cell.favoriteButton.isSelected = true
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.viewModel.pressedLike(at: indexPath)
-    }
-    
 }
+

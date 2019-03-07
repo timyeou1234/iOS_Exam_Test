@@ -12,6 +12,7 @@ class SearchedItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
